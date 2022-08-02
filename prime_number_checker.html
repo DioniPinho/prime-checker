@@ -1,0 +1,29 @@
+<html>
+   <script>
+    function checkNumber(){
+      var num = parseInt(document.getElementById('num').value)
+      var status = "The number " + num +" is prime."
+      if (num === 1 || num === 0){
+        status = "The number " + num +" isn't prime."
+      }else if (num === 2){
+        status = "The number " + num +" is prime."
+      }else{
+        for (var i = 2; i < num; i++){
+          if (num % i === 0 ){
+            status = "The number " + num +" isn't prime."
+            break
+          }
+        }
+      }
+      console.log(status)
+      result.innerHTML=status
+    }
+   </script>
+    <body style="text-align:center;">
+      <pre>
+        <h2> Number </h2> <input id="num" type="number" style="width: 100px;" /> <button onclick="checkNumber()">Verifcar</button>
+        <br />
+      </pre>
+        <h3>Result: </h3> <h2><div id="result"></div><h2>
+    </body>
+</html>
